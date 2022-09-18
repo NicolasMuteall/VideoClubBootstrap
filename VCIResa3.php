@@ -5,12 +5,14 @@
 ?>
 <?php
     $titrefilm = $_GET['film'];
+    $erreur = "";
 
     $reponse1 = $cnx->query('select * from film join typefilm ON film.CODE_TYPE_FILM = typefilm.CODE_TYPE_FILM where TITRE_FILM = "'.$titrefilm.'"');
     $results1 = $reponse1->fetch(PDO::FETCH_OBJ);
 
     if($results1 === false){
         $titrefilm = 'Die Hard 1';
+        $erreur = "<h4 class='text-primary'>Nous n'avons pas trouvé votre film, nous vous en avons choisi un autre.</h4>";
     }
 
     $reponse = $cnx->query('select * from film join typefilm ON film.CODE_TYPE_FILM = typefilm.CODE_TYPE_FILM where TITRE_FILM = "'.$titrefilm.'"');
@@ -21,7 +23,8 @@
     $resultsreal = $reponsereal->fetch(PDO::FETCH_OBJ);
 ?>
 <div class="container text-center mt-5">
-    <h1 class="">Voici le film que vous avez sélectionné :</h1>
+    <h1 class="mb-3">Voici le film que vous avez sélectionné :</h1>
+    <?=$erreur?>
     <div class="container d-flex justify-content-center">
         <div class="rounded border shadow-sm d-flex align-items-center">    
             <div>

@@ -42,13 +42,13 @@
                         <a class="nav-link" href="VCIResa.php">Réserver un film</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Les boutiques VC</a>
+                        <a class="nav-link" href="VCIConstr.php">Les boutiques VC</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Actualités</a>
+                        <a class="nav-link" href="VCIConstr.php">Actualités</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nous contacter</a>
+                        <a class="nav-link" href="VCIConstr.php">Nous contacter</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="admin" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Admin</a>
@@ -83,18 +83,18 @@
                             <div class="d-flex justify-content-center">
                                 <table class="table table-borderless align-middle text-center">
                                     <tr>
-                                        <td>Login:</td>
+                                        <td>Login :</td>
                                         <td><input class="form-control" name="login" type="text" placeholder="Saisissez votre login"></td>
                                     </tr>
                                     <tr>
-                                        <td>Mot de passe:</td>
+                                        <td>Mot de passe :</td>
                                         <td><input type="password" name="mdp" class="form-control" placeholder="Saisissez votre mot de passe"></td>
                                     </tr>
                                 </table>    
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                            <button type="reset" class="btn btn-secondary">Effacer</button>
                             <button type="submit" class="btn btn-primary">GO</button>
                         </div>
                     </form>

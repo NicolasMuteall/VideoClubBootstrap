@@ -14,6 +14,13 @@
             $resume = $_POST['resume'];
             $error = false;
 
+            $reponsetype = $cnx->query('select * from typefilm where CODE_TYPE_FILM = "'.$type.'"');
+            $donneestype = $reponsetype->fetch(PDO::FETCH_OBJ);
+            $chemin = $donneestype->LIB_TYPE_FILM;
+
+            $reponsetitre = $cnx->query('select * from film where TITRE_FILM = "'.$titre.'"');
+            $donneestitre = $reponsetitre->fetch(PDO::FETCH_OBJ);
+
             $reponse = $cnx->query("select AUTO_INCREMENT from information_schema.TABLES where TABLE_NAME = 'film'");
             //Affiche l'ID du prochain film ajouté
             $results = $reponse->fetch(PDO::FETCH_OBJ);
@@ -23,13 +30,15 @@
                 echo "<h5>Le titre doit être renseigné.</h5><br>";
                 $error = true;
             }
+                     
             if(!preg_match('/^[0-9]{4}$/', $annee) || !preg_match('/./', $annee)){
                 //Si c'est pas des chiffres ou s'il y a plus de 4 chiffres ou si c'est vide :
                 echo "<h5>L'année doit être renseignée et le format doit être correct.</h5><br>";
                 $error = true;
             }else{
                 $error = false;
-            }
+            } 
+            
             if(!empty($_FILES['affiche'])) {
                 $nameFile = $_FILES['affiche']['name'];
                 $typeFile = $_FILES['affiche']['type'];
@@ -49,12 +58,27 @@
                     $error = true;
                 }
             }
+
             if($_FILES['affiche']['size'] === 0){
                 echo "<h5>Une image doit-être ajoutée.</h5><br>";
                 $error = true;
             }
-            if(!$error){ 
-                move_uploaded_file($tmpFile, 'C:\wamp64\www\EX_PHP\VideoBootstrap\pictures\AddFilms\ ' .uniqid() . '.' . strtolower(end($extension) ) );
+            
+            if($donneestitre === false){
+                $error = false;
+            }else{
+                echo "<h5>Le film existe déjà.</h5><br>";
+                $error = true;
+            }
+
+            if(preg_match('/^[0-9]{4}$/', $annee) &&
+                preg_match('/./', $annee) &&
+                !empty($_FILES['affiche']) &&
+                in_array($typeFile, $typeimg) &&
+                $_FILES['affiche']['size'] > 0 &&
+                $donneestitre === false
+            ){ 
+                move_uploaded_file($tmpFile, "C:\\wamp64\\www\\EX_PHP\\VideoBootstrap\\pictures\\FilmMiniatures\\".$chemin."\\ " .uniqid() . '.' . strtolower(end($extension) ) );
 
                 $sql = "INSERT into film (TITRE_FILM, ANNEE_FILM, ID_REALIS, CODE_TYPE_FILM, RESUME, REF_IMAGE)
                 VALUES ('$titre', '$annee', '$real', '$type', '$resume', '$nameFile')";
