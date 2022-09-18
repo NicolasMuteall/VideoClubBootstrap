@@ -11,7 +11,7 @@
 <div class='container border mt-5 text-center'>
     <h1>Saisie d'un nouveau film :</h1>
     <div class="border shadow-sm rounded w-50 mx-auto pb-3 px-2 mt-3">
-            <form action="" method="post">
+            <form action="VCINewFilm2.php" method="post" enctype="multipart/form-data">
                 <table class="mx-auto table table-borderless align-middle"> 
                     <tr>
                         <td>Titre :</td>
@@ -39,16 +39,16 @@
                     </tr>
                     <tr>
                         <td>Année de sortie :</td>
-                        <td><input name="" class="form-control" type="text" placeholder="Saisissez l'année de sortie du film" aria-label="default input example"></td>
+                        <td><input type="text" name="annee" class="form-control" placeholder="Saisissez l'année de sortie du film" aria-label="default input example"></td>
                     </tr>
                     <tr>
                         <td>Affiche :</td>
-                        <td><input name="titre" class="form-control" type="text" placeholder="" aria-label="default input example"></td>
+                        <td><input class="form-control" type="file" name='affiche' id="formFile"></td>
                     </tr>
                     <tr>
                         <td>Résumé :</td>
                         <td><div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                            <textarea class="form-control" name="resume" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
                             </div>
                         </td>
                     </tr>
