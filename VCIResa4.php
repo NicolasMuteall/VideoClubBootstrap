@@ -1,7 +1,6 @@
 <?php 
     include('VCITitre.php');
     include('ConnectBDD.php');
-    include('ConnectBDD.php');
     $film = $_GET['choixfilm'];
     $idfilm = $_GET['idfilm'];
     $nom = $_POST['nom'];
