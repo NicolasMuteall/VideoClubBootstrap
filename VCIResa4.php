@@ -28,7 +28,6 @@
                     $sql = "insert into location (NUM_ADHERENT, ID_FILM, DEBUT_LOCATION, DATE_RETOUR)
                     VALUES ('$numadh', '$idfilm','$today', '$finloc')";
                     $cnx->exec($sql);
-                    echo "Film réservé avec succès";
                 ?>
                 <h2 style='color: blue; font-style: italic;'><?php echo "Merci ".$nom." pour votre réservation.";?></h2>
                 <p style='color: blue;'>Il ne vous plus qu'à passer en boutique pour récupérer votre exemplaire du film '<?php echo $film ?>'</p>

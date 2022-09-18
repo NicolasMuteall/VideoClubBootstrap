@@ -12,7 +12,7 @@
 
     if($results1 === false){
         $titrefilm = 'Die Hard 1';
-        $erreur = "<h4 class='text-primary'>Nous n'avons pas trouvé votre film, nous vous en avons choisi un autre.</h4>";
+        $erreur = "<h4 class='text-primary mt-3'>Nous n'avons pas trouvé votre film, nous vous en avons choisi un autre.</h4>";
     }
 
     $reponse = $cnx->query('select * from film join typefilm ON film.CODE_TYPE_FILM = typefilm.CODE_TYPE_FILM where TITRE_FILM = "'.$titrefilm.'"');
