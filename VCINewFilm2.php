@@ -3,7 +3,7 @@
     include('ConnectBDD.php');
 ?>
 
-<div class='container border mt-5 text-center'>
+<div class='container mt-5 text-center'>
     <h1 class='mb-3'>Saisie d'un nouveau film :</h1>
     <?php
             $titre = $_POST['titre'];

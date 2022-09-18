@@ -8,7 +8,7 @@
     $reponsereal = $cnx->query("select * from star");
     $resultsreal = $reponsereal->fetchall(PDO::FETCH_OBJ);
 ?>
-<div class='container border mt-5 text-center'>
+<div class='container mt-5 text-center'>
     <h1>Saisie d'un nouveau film :</h1>
     <div class="border shadow-sm rounded w-50 mx-auto pb-3 px-2 mt-3">
             <form action="VCINewFilm2.php" method="post" enctype="multipart/form-data">

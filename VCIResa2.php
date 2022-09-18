@@ -1,6 +1,6 @@
 <?php include('VCITitre.php')?>
 <div class="container border text-center mt-5">
-    <h1 class="mb-5">Sélectionnez le film que vous désirez réserver :</h1>
+    <h1 class="mb-3">Sélectionnez le film que vous désirez réserver :</h1>
     <?php include('ConnectBDD.php')?>
     <?php
         $idCatFilm="";

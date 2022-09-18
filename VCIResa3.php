@@ -6,6 +6,13 @@
 <?php
     $titrefilm = $_GET['film'];
 
+    $reponse1 = $cnx->query('select * from film join typefilm ON film.CODE_TYPE_FILM = typefilm.CODE_TYPE_FILM where TITRE_FILM = "'.$titrefilm.'"');
+    $results1 = $reponse1->fetch(PDO::FETCH_OBJ);
+
+    if($results1 === false){
+        $titrefilm = 'Die Hard 1';
+    }
+
     $reponse = $cnx->query('select * from film join typefilm ON film.CODE_TYPE_FILM = typefilm.CODE_TYPE_FILM where TITRE_FILM = "'.$titrefilm.'"');
     $results = $reponse->fetch(PDO::FETCH_OBJ);
     $idfilm = $results->ID_FILM;
@@ -14,7 +21,7 @@
     $resultsreal = $reponsereal->fetch(PDO::FETCH_OBJ);
 ?>
 <div class="container text-center mt-5">
-    <h1 class="mb-5">Voici le film que vous avez sélectionné :</h1>
+    <h1 class="">Voici le film que vous avez sélectionné :</h1>
     <div class="container d-flex justify-content-center">
         <div class="rounded border shadow-sm d-flex align-items-center">    
             <div>

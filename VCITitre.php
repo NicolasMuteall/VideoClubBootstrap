@@ -53,32 +53,10 @@
                     <li class="nav-item">
                         <a class="nav-link" id="admin" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Admin</a>
                     </li>
-                    <!--<li class="nav-item">
-                        <div id="login" style="display:none;">
-                            <form action="VCIAdmin.php" method="POST" style="" class="border shadow-ms">
-                                <div class="d-flex justify-content-center">
-                                    <table class="table table-borderless align-middle text-center">
-                                        <tr>
-                                            <td>Login:</td>
-                                            <td><input class="form-control" name="login" type="text" placeholder="Saisissez votre login"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mot de passe:</td>
-                                            <td><input type="password" name="mdp" class="form-control" placeholder="Saisissez votre mot de passe"></td>
-                                        </tr>
-                                    </table>    
-                                </div>
-                                <div class="d-flex justify-content-center">
-                                    <button type="button" id="retour" class="btn btn-secondary">Retour</button>
-                                    <button type="submit" class="btn btn-primary ms-2">Go!</button>
-                                </div>
-                            </form>
-                        </div>
-                    </li>-->
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form action="VCIResa3.php" method='GET' class="d-flex">
+                    <input class="form-control me-2" name="film" type="text" placeholder="Recherche" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Recherche</button>
                 </form>
             </div>
         </div>
@@ -97,7 +75,7 @@
             <div class="modal-dialog">
                 <div class="modal-content text-center">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Connexion Admin</h5>
+                        <h5 class="modal-title mx-auto" id="staticBackdropLabel">Connexion Admin</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form action="VCIAdmin.php" method="POST" class="">
