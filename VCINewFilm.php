@@ -6,10 +6,10 @@
     $donnees = $reponse->fetchall(PDO::FETCH_OBJ);
 
     $reponsereal = $cnx->query("select * from star");
-    $resultsreal = $reponsereal->fetchall(PDO::FETCH_OBJ);
+    $resultsreal = $reponsereal->fetchall(PDO::FETCH_OBJ);/*pour le github */
 ?>
 <div class='container mt-5 text-center'>
-    <h1>Saisie d'un nouveau film :</h1>
+    <h1 class='mb-5'>Saisie d'un nouveau film :</h1>
     <div class="border shadow-sm rounded w-50 mx-auto pb-3 px-2 mt-3">
             <form action="VCINewFilm2.php" method="post" enctype="multipart/form-data">
                 <table class="mx-auto table table-borderless align-middle"> 
