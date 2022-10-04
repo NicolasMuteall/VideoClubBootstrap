@@ -2,8 +2,8 @@
     include('VCITitreAdmin.php');
     include('ConnectBDD.php');
 
-    $login = $_POST['login'];
-    $mdp = $_POST['mdp'];
+    $login =  htmlentities($_POST['login']);
+    $mdp = htmlentities($_POST['mdp']);
                 
     $reponse = $cnx->query('select LOGIN_ADMIN, PASS_ADMIN from admin where LOGIN_ADMIN = "'.$login.'" and PASS_ADMIN = "'.$mdp.'"');
     $results = $reponse->fetch(PDO::FETCH_OBJ);
